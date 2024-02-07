@@ -1,0 +1,85 @@
+1. Adim-->Yeni bir proje olusturmak--(TeamLead olusturur)
+2.Adim-->pom.xml i testNg ye gore dependcy ler eklenir
+3.projeye test<java altinda bir pages,bir tests,bir de utilities packegleri olusturulur
+*Bos package ler github da gorunmez icerisine birseyler eklenmek zorunda
+4.gitignore
+5.confligt(ortak kullanilacak classlar kullanacak kisiler arasinda satir satir paylastirilir)
+*gitignore projeyi olusturdugumuzda gelmiyorsa proje seviyesinde bir file dosyasi olusturup ismini .gitignore verdigimiz zaman olusur.
+7.Github da projemizle ayni isimde bir reporsitory olustururuz.Olustuturken privat secenegini secmek daha iyi olur
+8.olusturduktan sonra karsimiza cikan komutlarla projeyi repository e atacagiz
+<--Komutlar-->
+-git init(.git lokalimizdeki repomuz)
+-git add.git
+-git commit -m "Nuriye-16.09.23-v1"(anlasilir bir version ismi verilmeli)
+-git remote add origin (githubadresi)
+-git push -u origin master
+
+(token alma islemi)
+githuba giris yapip settingse giriniz
+solda developer settingse tikliyoruz
+soldaki personel acess token tikliyoruz
+tokenclassic seciyoruz
+generate new token seciyoruz
+bir isim yaziyoruz(expiration bolumunden noexpiration secebiliriz(suresiz))
+Repo bolumunu secip asagidan generate token deyip olusturuyoruz
+Tokeni kopyalayip intelije yapistiriyoruz
+9.Takimarkadaslarimizi reporsitorymize eklememiz lazim
+-Your reporsitory bolumune tikliyoruz
+-olusturdugumuz reporsitory e tiklayip ,settingns e tikliyoruz
+-Collaborators bolumune tiklayip
+ -Add people ile tek tek takim arkadaslarimizin mail adreslerini ekliyoruz
+ -Takim arkadaslarimiz maillerimine gelen daveti kabul edecek
+ -Sonrasinda herkes projeyi clonlayip kendi intelije sine yapistiracak
+  ilk adim file-new-projeckt from version control kismina tikliyoruz
+ -github daki projemizdeki code bolumunden projeyyi kopyaliyoruz ve intelije ye yapistiroyoruz.
+ (clone yapmamizin sebebi icerisindeki butun dosyalari kendi lokalimize almamiz)
+ *clonlamayi yaptiktan sonra kimse master branchinda calismamali
+ Bunu da su sekilde gorebiliriz
+ -git branch-->var olan branchlari listeler
+ -git branch isim -->kendi adimiza branch olusturmus oluruz
+ -tekrar git branch  deyip tekrar listeleriz
+ *hangi branchta oldugumuz anlamamiz icin yesil ve yildiz simgesinin nerede olduguna bakariz
+ -branchimizi degistirmek icin git checkout isim(kendi branchimiza geceriz) yada git ckechout master(master branchina geceriz) diyerek yapabiliriz
+
+         LOCAL                          REMOTE(-->github)
+
+        Master     <-----(PULL)         Master
+          |                                 ^
+          |                                 |  MERGE
+
+        isim       ---->(PUSH)            isim
+    (Buraya kod yazdim)
+
+    --Push edilen dosyalari teamlead merge eder
+    -Projeye girer master menusune tiklayip branchlari kontrol eder
+    -Contribute bolumune tiklayip gelen pull'u acmak icin open pull request tiklariz
+    -Create pull request e tiklayip
+    -Merge requersti tiklariz
+    -Confirm merge deriz ve islemimiz tamamlanmis olur
+
+    ****Kendi branch imizdaki dosyayi pusch edikten sonra teamlead guncelleme yaptim diye mesaj atmadigi surece dosyamizda
+    hicbir degisiklik yapmamaliyiz.Yoksa commit etmemiz gereken seyler olusacagindan ertesi gun master branchindan
+    bilgi cekmekte sorun yasariz.***
+    -->Teamlead master branchina gecip pull islemini gerceklestirir build(cekic simgesi)basarak bir hata var mi kontrol eder
+    Bir hata olusursa cozmasi gerekir.Yoksa iletisim kanalindan takim arkadaslarina master branchi guncellenmistir.
+    Sabah ise baslamadan oncelocalinizdeki master branchini guncelleyiniz diuye bilgilendirme mesaji atmali
+
+    Sabah ise baslarken terminali acip
+    -git checkout master
+    -git pull(yada yukardaki mavi ok ile)
+    pull islemini gerceklestirmeliyiz
+    --git checkout isim-->kendi branchimiza gecis yapacagiz
+    --git merge master -->dosyalari kendi branchimiza merge ediyoruz
+    ve artik kendi branchimizda calismaya baslayabiliriz.
+    calismalarimizi tamaladiktan sonra aksaminda tekrar commit ve push islemi yapip o gunu de tamamlariz
+    ve dongu devam eder
+
+      <--Conflig-->(Cakisma)-->Bu sorunu teamlead cozer(bazen conflig olusan kisilerle gorusur bazen kendisi karar verir)
+    ayni satira birden fazla kisi yazdigi zaman ortaya cikar
+    conflig uyarisi aliriz
+    --create pul reques diyoruz
+    --resolve conflicts e tiklayip hangi kodu tutacagimiza  karar veririz.-- olan bol
+    --mark as resolved tiklariz
+    --commit merge tiklairz.
+    --Tekrar merge reques tiklariz
+    --confirm merge yapip islemimizi tamamlariz
